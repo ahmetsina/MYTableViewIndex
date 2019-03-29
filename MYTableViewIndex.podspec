@@ -10,7 +10,7 @@ MYTableViewIndex is a re-implementation of UITableView section index. This contr
   s.homepage         = 'https://github.com/mindz-eye/MYTableViewIndex'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Makarov Yuriy' => 'makarov.yuriy@gmail.com' }
-  s.source           = { :git => 'https://github.com/mindz-eye/MYTableViewIndex.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/ahmetsina/MYTableViewIndex.git', :tag => s.version.to_s }
   s.social_media_url = 'https://twitter.com/mindZ_eYe'
 
   s.ios.deployment_target = '8.0'
