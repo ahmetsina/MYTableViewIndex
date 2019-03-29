@@ -46,7 +46,7 @@ open class TableViewIndex : UIControl {
     /// Use resetMinWidth to fall back to default spacing.
     public var minWidth: CGFloat {
         get { return style.minWidth }
-        set { style = style.copy(applyingMinWidth: newValue) }
+        set { style = style.copy(applyingMinWidth: minWidth) }
     }
     
     /// Vertical spacing between the items. Equals to 1 point by default to match system appearance.
@@ -129,7 +129,7 @@ open class TableViewIndex : UIControl {
         isExclusiveTouch = true
         isMultipleTouchEnabled = false
         isAccessibilityElement = true
-        accessibilityTraits = UIAccessibilityTraits.adjustable
+        accessibilityTraits = UIAccessibilityTraitAdjustable
         accessibilityLabel = NSLocalizedString("Table index", comment: "Accessibility title for the section index control")
     }
     
@@ -196,7 +196,7 @@ open class TableViewIndex : UIControl {
         }
         
         let selectedText = NSLocalizedString("Selected", comment: "Accessibility title for the selected state")
-        UIAccessibility.post(notification: UIAccessibility.Notification.announcement, argument: "\(titleText), \(selectedText)")
+        UIAccessibilityPostNotification(UIAccessibilityAnnouncementNotification, "\(titleText), \(selectedText)")
     }
         
     // MARK: - Layout
@@ -231,7 +231,7 @@ open class TableViewIndex : UIControl {
         let layout = ItemLayout(items: items, style: style)
         let width = layout.size.width + style.indexInset.left + style.indexInset.right
         let minWidth: CGFloat = CGFloat(self.minWidth)
-        return CGSize(width: max(width, minWidth), height: UIView.noIntrinsicMetric)
+        return CGSize(width: max(width, minWidth), height: UIViewNoIntrinsicMetric)
     }
     
     open override func sizeThatFits(_ size: CGSize) -> CGSize {
